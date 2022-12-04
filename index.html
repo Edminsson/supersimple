@@ -8,5 +8,21 @@
 </head>
 <body>
     <h1>Hejsan</h1>
+    <div>
+        <button id="notifyknappen">Notify</button>
+    </div>
+    <script>
+        const knappen = document.getElementById();
+        knappen.addEventListener('click', () => {
+            Notification.requestPermission().then(perm => {
+                if (perm === 'granted' ) {
+                    const notification = new Notification('Example notification', {
+                        body: 'Hejsan'
+                    });
+                }
+            })
+
+        });
+    </script>
 </body>
 </html>
