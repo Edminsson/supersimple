@@ -12,7 +12,7 @@
         <button id="notifyknappen">Notify</button>
     </div>
     <script>
-        const knappen = document.getElementById();
+        const knappen = document.getElementById('notifyknappen');
         knappen.addEventListener('click', () => {
             Notification.requestPermission().then(perm => {
                 if (perm === 'granted' ) {
