@@ -7,9 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hejsan</h1>
+    <h1>Notifytjänster</h1>
     <div>
         <button id="notifyknappen">Notify</button>
+    </div>
+    <div>
+        <button id="avanceradknappen">Avancerad funktionalitet</button>
     </div>
     <script>
         const knappen = document.getElementById('notifyknappen');
@@ -23,6 +26,15 @@
             })
 
         });
-    </script>
+
+        const avancerad = document.getElementById('avanceradknappen');
+        knappen.addEventListener('click', () => {
+            navigator.serviceWorker.getRegistration()
+            .then(reg => console.log('REG:',reg))
+
+        });
+
+
+</script>
 </body>
 </html>
