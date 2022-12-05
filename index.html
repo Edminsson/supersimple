@@ -12,8 +12,13 @@
         <button id="notifyknappen">Notify</button>
     </div>
     <div>
+        <p>Observera att den här funktionaliteten bara funkar när det finns en registrerad service-worker.</p>
         <button id="avanceradknappen">Avancerad funktionalitet</button>
     </div>
+    <div>
+        <button id="askpermission">Ask permission</button>
+    </div>
+
     <script>
 
         addEventListener('load', () => {
@@ -41,6 +46,24 @@
             console.log('Requested registration object.');
 
         });
+
+        const askpermissionbutton = document.getElementById('askpermission');
+        askpermissionbutton.addEventListener('click', () => {
+            askPermission().then(permissionResult => {
+                if(permissionResult !== 'granted') {
+                    console.log('We were NOT granted permission');
+                } else {
+                    console.log('We were granted permission');
+                }
+            })
+        });
+        
+        function askPermission() {
+            return new Promise((resolve, reject) => {
+                const permissionResult = Notification.requestPermission(result => resolve(result));
+            });
+        }
+
 
 
 </script>
