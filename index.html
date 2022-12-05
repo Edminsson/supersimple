@@ -15,6 +15,13 @@
         <button id="avanceradknappen">Avancerad funktionalitet</button>
     </div>
     <script>
+
+        addEventListener('load', () => {
+            let sw = navigator.serviceWorker.register('./sw.js')
+            .then(() => console.log('Registrering av serviceworker gick bra.'))
+            .catch((err) => console.log('Det uppstod ett fel ner serviceworker skulle registreras', err));
+        })
+
         const knappen = document.getElementById('notifyknappen');
         knappen.addEventListener('click', () => {
             Notification.requestPermission().then(perm => {
