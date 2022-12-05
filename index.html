@@ -29,7 +29,7 @@
 
         const avancerad = document.getElementById('avanceradknappen');
         avancerad.addEventListener('click', () => {
-            navigator.serviceWorker.getRegistration()
+            navigator.serviceWorker.ready
             .then(reg => console.log('REG:',reg))
 
         });
