@@ -28,7 +28,7 @@
         });
 
         const avancerad = document.getElementById('avanceradknappen');
-        knappen.addEventListener('click', () => {
+        avancerad.addEventListener('click', () => {
             navigator.serviceWorker.getRegistration()
             .then(reg => console.log('REG:',reg))
 
