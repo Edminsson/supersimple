@@ -30,7 +30,9 @@
         const avancerad = document.getElementById('avanceradknappen');
         avancerad.addEventListener('click', () => {
             navigator.serviceWorker.ready
-            .then(reg => console.log('REG:',reg))
+            .then(reg => console.log('REG:',reg));
+
+            console.log('Requested registration object.'),
 
         });
 
