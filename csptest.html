@@ -19,5 +19,12 @@
 <body>
   <h1>CSP tests</h1>
 
+  <style id="page-style">
+    @media print {
+      @page { size: portrait; }
+    }
+  </style>
+  <app-root></app-root>
+  <script src="runtime.js" type="module"></script>
 </body>
 </html>
